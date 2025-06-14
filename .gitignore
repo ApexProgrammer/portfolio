@@ -1,0 +1,57 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/.yarn
+.pnpm-store/
+
+# testing
+/coverage
+/cypress/videos/
+/cypress/screenshots/
+
+# production
+/build
+/dist
+
+# TypeScript
+*.tsbuildinfo
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.log
+
+# IDE specific files
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.vs/
+
+# Editor backups
+*~
+*.swp
+*.swo
+
+# npm/yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Cache directories
+.cache/
+.next/
