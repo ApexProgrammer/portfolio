@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.1eec1524.css",
+    "main.js": "/portfolio/static/js/main.51388ccd.js",
+    "static/media/project-corvette-project-display.png": "/portfolio/static/media/project-corvette-project-display.bd5ff8a20e2dfde4fc1d.png",
+    "static/media/portfolio-project-display.png": "/portfolio/static/media/portfolio-project-display.c52b95e5210ec73c23c5.png",
+    "static/media/avatar.png": "/portfolio/static/media/avatar.fed1807e84f6aa12c875.png",
+    "index.html": "/portfolio/index.html",
+    "main.1eec1524.css.map": "/portfolio/static/css/main.1eec1524.css.map",
+    "main.51388ccd.js.map": "/portfolio/static/js/main.51388ccd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1eec1524.css",
+    "static/js/main.51388ccd.js"
+  ]
+}
