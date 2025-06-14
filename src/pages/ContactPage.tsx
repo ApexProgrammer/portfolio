@@ -21,7 +21,6 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
 const ContactPage: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -209,18 +208,12 @@ const ContactPage: React.FC = () => {
                     Email: <Link href="mailto:ryan.casey1@outlook.com" sx={{ color: 'white', fontWeight: 500 }}>ryan.casey1@outlook.com</Link>
                   </Typography>
                 </Box>
-                
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <PhoneIcon sx={{ color: 'white' }} />
-                  <Typography variant="body1" sx={{ textAlign: 'left' }}>
-                    Phone: <Link href="tel:+7856564179" sx={{ color: 'white', fontWeight: 500 }}>(785) 656-4179</Link>
-                  </Typography>
-                </Box>
+            
                 
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <LocationOnIcon sx={{ color: 'white' }} />
                   <Typography variant="body1" sx={{ textAlign: 'left' }}>
-                    Location: Hays, KS
+                    Location: Kansas
                   </Typography>
                 </Box>
               </Stack>
