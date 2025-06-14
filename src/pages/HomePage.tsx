@@ -224,7 +224,7 @@ const Home: React.FC = () => {
               color: theme => theme.palette.mode === 'light' ? '#ffffff' : theme.palette.text.primary,
               textShadow: theme => theme.palette.mode === 'light' ? '0 2px 8px rgba(0,0,0,0.3)' : 'none'
             }}>
-              Technologist 
+              
             </Typography>
           </Fade>
           
