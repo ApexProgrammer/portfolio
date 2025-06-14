@@ -1,10 +1,15 @@
-<<<<<<< HEAD
-# portfolio
-Portfolio site where I showcase my talents, projects, and professional journey. 
-=======
-# Getting Started with Create React App
+# Ryan Casey Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio site where I showcase my talents, projects, and professional journey.
+
+## About This Project
+
+This is a modern React-based portfolio built with:
+- React 19
+- TypeScript
+- Material-UI
+- Framer Motion
+- React Router DOM
 
 ## Available Scripts
 
@@ -48,4 +53,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
->>>>>>> 968ac29 (Initial commit)
