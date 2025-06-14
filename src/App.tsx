@@ -55,9 +55,8 @@ function App() {
   }, [mode]);
 
   const toggleTheme = () => setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
-
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={muiTheme}>
         <div className="App">
           <Header mode={mode} toggleTheme={toggleTheme} />
