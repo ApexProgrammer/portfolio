@@ -14,22 +14,11 @@ const avatarImage = require('../static/images/avatar.png');
 
 const AboutPage: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   
   // Create refs for scroll-based animation sections
   const educationSectionRef = useRef<HTMLDivElement>(null);
-  const experienceSectionRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
+    useEffect(() => {
     setLoaded(true);
-    
-    // Add scroll event listener
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -139,12 +128,6 @@ const AboutPage: React.FC = () => {
               </Box>
               <Typography variant="h5" sx={{ fontWeight: 600, mb: 1, color: theme => theme.palette.text.primary }}>
                 Ryan Casey
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                Technologist 
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                Kansas
               </Typography>
             </Box>
           </Stack>

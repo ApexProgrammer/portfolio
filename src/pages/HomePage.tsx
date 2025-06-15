@@ -24,7 +24,6 @@ const avatarImage = require('../static/images/avatar.png');
 
 const Home: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   // Adding a small delay before animations to ensure backgrounds are rendered
   const [initialRender, setInitialRender] = useState(true);
   
@@ -36,19 +35,11 @@ const Home: React.FC = () => {
   const [aboutVisible, setAboutVisible] = useState(false);
   const [projectsVisible, setProjectsVisible] = useState(false);
   
-  useEffect(() => {
-    // Small delay to ensure backgrounds are fully rendered before animations
+  useEffect(() => {    // Small delay to ensure backgrounds are fully rendered before animations
     const timer = setTimeout(() => {
       setLoaded(true);
       setInitialRender(false);
     }, 50);
-    
-    // Handle scroll events
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
     
     // Set up Intersection Observer for scroll-based animations
     const observerOptions = {
@@ -74,11 +65,9 @@ const Home: React.FC = () => {
     // Observe elements
     if (aboutSectionRef.current) aboutObserver.observe(aboutSectionRef.current);
     if (projectsSectionRef.current) projectsObserver.observe(projectsSectionRef.current);
-    
-    // Clean up
+      // Clean up
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
       aboutObserver.disconnect();
       projectsObserver.disconnect();
     };
@@ -224,7 +213,7 @@ const Home: React.FC = () => {
               color: theme => theme.palette.mode === 'light' ? '#ffffff' : theme.palette.text.primary,
               textShadow: theme => theme.palette.mode === 'light' ? '0 2px 8px rgba(0,0,0,0.3)' : 'none'
             }}>
-              Technologist 
+              
             </Typography>
           </Fade>
           

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Typography,
@@ -9,7 +9,6 @@ import {
   CardMedia,
   CardActions,
   Button,
-  Stack,
   Fade,
   Chip,
 } from '@mui/material';
@@ -44,19 +43,9 @@ const projects = [
 
 const ProjectsPage: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const projectsSectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     setLoaded(true);
-    
-    // Add scroll event listener for animations
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
