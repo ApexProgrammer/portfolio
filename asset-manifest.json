@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.1eec1524.css",
-    "main.js": "/static/js/main.bef309cd.js",
+    "main.js": "/static/js/main.c3167678.js",
     "static/media/project-corvette-project-display.png": "/static/media/project-corvette-project-display.bd5ff8a20e2dfde4fc1d.png",
     "static/media/portfolio-project-display.png": "/static/media/portfolio-project-display.c52b95e5210ec73c23c5.png",
     "static/media/avatar.png": "/static/media/avatar.fed1807e84f6aa12c875.png",
     "index.html": "/index.html",
     "main.1eec1524.css.map": "/static/css/main.1eec1524.css.map",
-    "main.bef309cd.js.map": "/static/js/main.bef309cd.js.map"
+    "main.c3167678.js.map": "/static/js/main.c3167678.js.map"
   },
   "entrypoints": [
     "static/css/main.1eec1524.css",
-    "static/js/main.bef309cd.js"
+    "static/js/main.c3167678.js"
   ]
 }
