@@ -14,6 +14,8 @@ import {
 } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
+import { TextField, InputAdornment } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 // Import project images
 import corvetteImage from '../static/images/projects/project-corvette-project-display.png';
@@ -52,10 +54,18 @@ const projects = [
 
 const ProjectsPage: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   
   useEffect(() => {
     setLoaded(true);
   }, []);
+
+  // Filter projects based on search term
+  const filteredProjects = projects.filter(project => 
+    project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
 
   return (
     <Box sx={{ 
@@ -102,14 +112,102 @@ const ProjectsPage: React.FC = () => {
             >
               Here are some of the projects I've worked on. Each project represents different skills and technologies I've mastered.
             </Typography>
+          </Fade>        </Container>
+      </Box>      {/* Search Section */}
+      <Container maxWidth="lg" sx={{ pt: 4, pb: 2 }}>
+        <Fade in={loaded} timeout={2000}>
+          <Box sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center',
+            gap: 2
+          }}>
+            <TextField
+              placeholder="Search projects or technologies..."
+              variant="outlined"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              fullWidth
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon sx={{ 
+                      color: theme => theme.palette.primary.main,
+                      fontSize: '1.2rem'
+                    }} />
+                  </InputAdornment>
+                ),
+              }}
+              sx={{
+                maxWidth: '600px',
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: 3,
+                  backgroundColor: theme => theme.palette.background.paper,
+                  boxShadow: theme => `0 4px 20px ${theme.palette.primary.main}20`,
+                  border: theme => `2px solid transparent`,
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    boxShadow: theme => `0 6px 25px ${theme.palette.primary.main}30`,
+                    transform: 'translateY(-2px)',
+                  },
+                  '&.Mui-focused': {
+                    border: theme => `2px solid ${theme.palette.primary.main}`,
+                    boxShadow: theme => `0 8px 30px ${theme.palette.primary.main}40`,
+                    transform: 'translateY(-3px)',
+                  }
+                },
+                '& .MuiOutlinedInput-input': {
+                  padding: '14px 16px',
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                }
+              }}
+            />
+            {searchTerm && (
+              <Typography 
+                variant="body2" 
+                sx={{ 
+                  color: theme => theme.palette.text.secondary,
+                  fontWeight: 500,
+                  opacity: 0.8
+                }}
+              >
+                {filteredProjects.length === 1 
+                  ? `Found 1 project` 
+                  : `Found ${filteredProjects.length} projects`
+                }
+                {searchTerm && ` matching "${searchTerm}"`}
+              </Typography>
+            )}
+          </Box>
+        </Fade>
+      </Container>
+        {/* Projects Grid */}
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        {filteredProjects.length === 0 && searchTerm ? (
+          <Fade in={loaded} timeout={1000}>
+            <Box sx={{ 
+              textAlign: 'center', 
+              py: 8,
+              opacity: 0.7
+            }}>
+              <SearchIcon sx={{ 
+                fontSize: '4rem', 
+                color: theme => theme.palette.text.secondary,
+                mb: 2,
+                opacity: 0.5
+              }} />
+              <Typography variant="h5" color="text.secondary" gutterBottom>
+                No projects found
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                Try searching for different keywords or technologies
+              </Typography>
+            </Box>
           </Fade>
-        </Container>
-      </Box>
-
-      {/* Projects Grid */}
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
-          {projects.map((project, index) => (
+        ) : (
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
+            {filteredProjects.map((project, index) => (
             <Box key={project.id} sx={{ width: { xs: '100%', sm: 'calc(50% - 16px)', md: 'calc(33.333% - 16px)' } }}>
               <Fade in={loaded} timeout={1000 + (index * 200)} style={{ transformOrigin: '0 0 0' }}>
                 <Card sx={{
@@ -181,13 +279,13 @@ const ProjectsPage: React.FC = () => {
                       >
                         Live Demo
                       </Button>
-                    )}
-                  </CardActions>
+                    )}                  </CardActions>
                 </Card>
               </Fade>
             </Box>
           ))}
-        </Box>
+          </Box>
+        )}
 
         {/* Call to Action */}
         <Box sx={{ textAlign: 'center', mt: 8, mb: 4 }}>
