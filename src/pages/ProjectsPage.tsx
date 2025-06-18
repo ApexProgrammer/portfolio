@@ -18,6 +18,7 @@ import LaunchIcon from '@mui/icons-material/Launch';
 // Import project images
 import corvetteImage from '../static/images/projects/project-corvette-project-display.png';
 import portfolioImage from '../static/images/projects/portfolio-project-display.png';
+import alphaImage from '../static/images/projects/alpha-project-dashboard.png';
 
 // Project data
 const projects = [
@@ -27,8 +28,8 @@ const projects = [
     description: 'My first portfolio website built with React and TypeScript. Features a modern UI with Material UI components, dark/light theme toggle, and elegant animations. This project showcases my frontend skills and design sensibilities.',
     image: portfolioImage,
     tags: ['React', 'TypeScript', 'Material UI', 'Responsive Design'],
-    githubLink: 'https://github.com',
-    liveLink: 'https://example.com',
+    githubLink: 'https://github.com/ApexProgrammer/portfolio',
+    liveLink: 'https://ryancasey.us',
   },
   {
     id: 2,
@@ -38,6 +39,14 @@ const projects = [
     tags: ['React.js', 'CSS3', 'JavaScript (ES6+)', 'Responsive Design'],
     githubLink: 'https://github.com/ApexProgrammer/project-corvette',
     liveLink: 'https://project-corvette.com',
+  },
+  { id: 3,
+    title: 'AI Honeypot Solution',
+    description: 'AI powered honeypot for cybersecurity research and practical use.',
+    image: alphaImage,
+    tags: ['Python', 'AI', 'Cybersecurity', 'Machine Learning', 'Flask'],
+    githubLink: 'https://github.com/ApexProgrammer/alpha',
+    liveLink: '',
   },
 ];
 
@@ -141,35 +150,38 @@ const ProjectsPage: React.FC = () => {
                         />
                       ))}
                     </Box>
-                  </CardContent>
-                  <CardActions sx={{ padding: 2, pt: 0 }}>
-                    <Button 
-                      size="small" 
-                      startIcon={<GitHubIcon />} 
-                      href={project.githubLink} 
-                      target="_blank"
-                      sx={{ 
-                        mr: 1,
-                        color: 'white',
-                        transition: 'transform 0.2s ease',
-                        '&:hover': { transform: 'translateY(-2px)' } 
-                      }}
-                    >
-                      Code
-                    </Button>
-                    <Button 
-                      size="small" 
-                      startIcon={<LaunchIcon />} 
-                      href={project.liveLink} 
-                      target="_blank"
-                      sx={{ 
-                        color: 'white',
-                        transition: 'transform 0.2s ease',
-                        '&:hover': { transform: 'translateY(-2px)' } 
-                      }}
-                    >
-                      Live Demo
-                    </Button>
+                  </CardContent>                  <CardActions sx={{ padding: 2, pt: 0 }}>
+                    {project.githubLink && (
+                      <Button 
+                        size="small" 
+                        startIcon={<GitHubIcon />} 
+                        href={project.githubLink} 
+                        target="_blank"
+                        sx={{ 
+                          mr: 1,
+                          color: 'white',
+                          transition: 'transform 0.2s ease',
+                          '&:hover': { transform: 'translateY(-2px)' } 
+                        }}
+                      >
+                        Code
+                      </Button>
+                    )}
+                    {project.liveLink && (
+                      <Button 
+                        size="small" 
+                        startIcon={<LaunchIcon />} 
+                        href={project.liveLink} 
+                        target="_blank"
+                        sx={{ 
+                          color: 'white',
+                          transition: 'transform 0.2s ease',
+                          '&:hover': { transform: 'translateY(-2px)' } 
+                        }}
+                      >
+                        Live Demo
+                      </Button>
+                    )}
                   </CardActions>
                 </Card>
               </Fade>

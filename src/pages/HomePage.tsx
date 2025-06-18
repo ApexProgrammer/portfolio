@@ -227,7 +227,7 @@ const Home: React.FC = () => {
               color: theme => theme.palette.mode === 'light' ? '#ffffff' : theme.palette.text.primary,
               textShadow: theme => theme.palette.mode === 'light' ? '0 1px 4px rgba(0,0,0,0.2)' : 'none'
             }}>
-              I develop web applications with an emphasis on cybersecurity and cutting-edge technologies, bringing the work ethic of Kansas to the digital frontier. Given my experience, I tackle every coding project with a practical approach to problem-solving.
+              I develop web applications with an emphasis on cybersecurity and cutting-edge technologies, bringing the work ethic of Kansas to the digital frontier. I tackle every coding project with a practical approach to problem-solving.
             </Typography>
           </Fade>
           
@@ -356,7 +356,7 @@ const Home: React.FC = () => {
             My interest in software development started in my childhood, experimenting with computers and learning how things operate. Above all, I cherish relationships, people, and family.
           </Typography>
           <Typography variant="body1" sx={{ mb: 4, color: theme => theme.palette.text.primary, textAlign: 'left'}}>
-           I like to work on cars, hunt, fish, and farm when I'm not coding. Project Corvette, which blends my passion and technical expertise, is my proudest endeavor to date. Right now, I want to increase my knowledge of cybersecurity, AI, drone technology, and IoT devices.
+           I like to work on cars, hunt, fish, and farm when I'm not coding. Right now, I want to increase my knowledge of cybersecurity, AI, drone technology, and IoT devices.
           </Typography>
           
           <Divider sx={{ my: 5, backgroundColor: theme => theme.palette.divider }} />
