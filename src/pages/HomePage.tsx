@@ -427,8 +427,7 @@ const Home: React.FC = () => {
           transform: projectsVisible ? 'translateY(0)' : 'translateY(30px)',
           transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
           visibility: initialRender ? 'hidden' : 'visible',
-        }}>
-        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
+        }}>        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Fade in={true} timeout={1000}>
             <Typography 
               variant="h4" 
@@ -442,13 +441,11 @@ const Home: React.FC = () => {
             >
               My Projects
             </Typography>
-          </Fade>
-          
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
+          </Fade>          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
             {/* Portfolio Project */}
             <Zoom in={projectsVisible} timeout={800} style={{ transitionDelay: projectsVisible ? '300ms' : '0ms' }}>
               <Card sx={{
-                width: { xs: '100%', sm: 'calc(50% - 16px)' },
+                width: { xs: '100%', sm: 'calc(50% - 16px)', md: 'calc(33.333% - 16px)' },
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -460,71 +457,55 @@ const Home: React.FC = () => {
                   transform: 'translateY(-10px)',
                   boxShadow: theme => `0 12px 20px ${theme.palette.primary.dark}30`,
                 }
-              }}>
-                <CardMedia
+              }}>                <CardMedia
                   component="img"
                   height="200"
-                  image={require('../static/images/projects/portfolio-project-display.png')}
-                  alt="Portfolio Website"
+                  image={require('../static/images/projects/alpha-project-dashboard.png')}
+                  alt="AI Honeypot Solution"
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Portfolio
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph sx={{ textAlign: 'left' }}>
-                    My first portfolio website built with React and TypeScript. Features a modern UI with Material UI components, dark/light theme toggle, and elegant animations.
-                  </Typography>                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 2 }}>
-                    {['React', 'TypeScript', 'Material UI', 'Responsive Design'].map((tag, i) => (
-                      <Chip 
-                        label={tag} 
-                        key={i} 
-                        size="small" 
-                        color="primary" 
-                        variant="outlined"
-                        sx={{ 
-                          color: 'white',
-                          borderRadius: 1
-                        }}
-                      />
-                    ))}
-                  </Box>
-                </CardContent>
-                <CardActions sx={{ padding: 2, pt: 0 }}>
-                  <Button 
-                    size="small" 
-                    startIcon={<GitHubIcon />} 
-                    href="https://github.com" 
-                    target="_blank"
-                    sx={{ 
-                      mr: 1,
-                      color: 'white',
-                      transition: 'transform 0.2s ease',
-                      '&:hover': { transform: 'translateY(-2px)' } 
-                    }}
-                  >
-                    Code
-                  </Button>
-                  <Button 
-                    size="small" 
-                    startIcon={<LaunchIcon />} 
-                    href="https://example.com" 
-                    target="_blank"
-                    sx={{ 
-                      color: 'white',
-                      transition: 'transform 0.2s ease',
-                      '&:hover': { transform: 'translateY(-2px)' } 
-                    }}
-                  >
-                    Live Demo
-                  </Button>
-                </CardActions>
+                    <Typography gutterBottom variant="h5" component="div">
+                      AI Honeypot Solution
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" paragraph sx={{ textAlign: 'left' }}>
+                      AI powered honeypot for cybersecurity research and practical use.
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 2 }}>
+                      {['Python', 'AI', 'Cybersecurity', 'Machine Learning', 'Flask'].map((tag, i) => (
+                        <Chip 
+                          label={tag} 
+                          key={i} 
+                          size="small" 
+                          color="primary" 
+                          variant="outlined"
+                          sx={{ 
+                            color: 'white',
+                            borderRadius: 1
+                          }}
+                        />
+                      ))}
+                    </Box>                  </CardContent>
+                  <CardActions sx={{ padding: 2, pt: 0 }}>
+                    <Button 
+                      size="small" 
+                      startIcon={<GitHubIcon />} 
+                      href="https://github.com/ApexProgrammer/alpha" 
+                      target="_blank"
+                      sx={{ 
+                        mr: 1,
+                        color: 'white',
+                        transition: 'transform 0.2s ease',
+                        '&:hover': { transform: 'translateY(-2px)' } 
+                      }}
+                    >
+                      Code
+                    </Button>
+                  </CardActions>
               </Card>
-            </Zoom>
-            
-            {/* Project Corvette */}
+            </Zoom>              {/* Project Corvette */}
             <Zoom in={projectsVisible} timeout={800} style={{ transitionDelay: projectsVisible ? '500ms' : '0ms' }}>
               <Card sx={{
-                width: { xs: '100%', sm: 'calc(50% - 16px)' },
+                width: { xs: '100%', sm: 'calc(50% - 16px)', md: 'calc(33.333% - 16px)' },
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -544,28 +525,28 @@ const Home: React.FC = () => {
                   alt="Project Corvette"
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Project Corvette
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph sx={{ textAlign: 'left' }}>
-                    An open source Corvette enthusiast website I founded to provide resources and community for Corvette owners and fans.
-                  </Typography>                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 2 }}>
-                    {['React.js', 'CSS3', 'JavaScript (ES6+)', 'Responsive Design'].map((tag, i) => (
-                      <Chip 
-                        label={tag} 
-                        key={i} 
-                        size="small" 
-                        color="primary" 
-                        variant="outlined"
-                        sx={{ 
-                          color: 'white',
-                          borderRadius: 1
-                        }}
-                      />
-                    ))}
-                  </Box>
-                </CardContent>
-                <CardActions sx={{ padding: 2, pt: 0 }}>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Project Corvette
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" paragraph sx={{ textAlign: 'left' }}>
+                      An open source Corvette enthusiast website I founded to provide resources and community for Corvette owners and fans.
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 2 }}>
+                      {['React.js', 'CSS3', 'JavaScript (ES6+)', 'Responsive Design'].map((tag, i) => (
+                        <Chip 
+                          label={tag} 
+                          key={i} 
+                          size="small" 
+                          color="primary" 
+                          variant="outlined"
+                          sx={{ 
+                            color: 'white',
+                            borderRadius: 1
+                          }}
+                        />
+                      ))}
+                    </Box>                  </CardContent>
+                  <CardActions sx={{ padding: 2, pt: 0 }}>
                   <Button 
                     size="small" 
                     startIcon={<GitHubIcon />} 

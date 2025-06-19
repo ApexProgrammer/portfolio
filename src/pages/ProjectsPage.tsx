@@ -204,8 +204,7 @@ const ProjectsPage: React.FC = () => {
                 Try searching for different keywords or technologies
               </Typography>
             </Box>
-          </Fade>
-        ) : (
+          </Fade>        ) : (
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
             {filteredProjects.map((project, index) => (
             <Box key={project.id} sx={{ width: { xs: '100%', sm: 'calc(50% - 16px)', md: 'calc(33.333% - 16px)' } }}>
@@ -237,8 +236,7 @@ const ProjectsPage: React.FC = () => {
                       {project.tags.map((tag, i) => (
                         <Chip 
                           label={tag} 
-                          key={i} 
-                          size="small" 
+                          key={i}size="small" 
                           color="primary" 
                           variant="outlined" 
                           sx={{ 
@@ -279,7 +277,8 @@ const ProjectsPage: React.FC = () => {
                       >
                         Live Demo
                       </Button>
-                    )}                  </CardActions>
+                    )}
+                  </CardActions>
                 </Card>
               </Fade>
             </Box>
