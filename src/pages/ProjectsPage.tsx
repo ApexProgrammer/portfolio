@@ -16,6 +16,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import SEO from '../Components/SEO';
 
 // Import project images
 import corvetteImage from '../static/images/projects/project-corvette-project-display.png';
@@ -66,12 +67,18 @@ const ProjectsPage: React.FC = () => {
     project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
   );
-
   return (
-    <Box sx={{ 
-      backgroundColor: theme => theme.palette.background.default,
-      minHeight: '100vh'
-    }}>
+    <>      <SEO 
+        title="Ryan Casey Projects - Software Development Portfolio | React & TypeScript"
+        description="Explore Ryan Casey's software development projects featuring React applications, TypeScript projects, web development work, and innovative technical solutions. View code repositories and live demos."
+        keywords="Ryan Casey Projects, Software Development Portfolio, React Projects, TypeScript Applications, Web Development Examples, Project Corvette, Alpha Dashboard, Portfolio Website, GitHub Projects"
+        url="https://ryancasey.us/projects"
+        type="website"
+      />
+      <Box sx={{ 
+        backgroundColor: theme => theme.palette.background.default,
+        minHeight: '100vh'
+      }}>
       {/* Header Section */}
       <Box 
         sx={{ 
@@ -323,9 +330,9 @@ const ProjectsPage: React.FC = () => {
               Contact Me
             </Button>
           </Paper>
-        </Box>
-      </Container>
+        </Box>      </Container>
     </Box>
+    </>
   );
 };
 

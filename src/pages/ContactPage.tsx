@@ -20,6 +20,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SEO from '../Components/SEO';
 
 const ContactPage: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
@@ -120,12 +121,18 @@ const ContactPage: React.FC = () => {
         setSending(false);
       });
   };
-
   return (
-    <Box sx={{ 
-      backgroundColor: theme => theme.palette.background.default,
-      minHeight: '100vh'
-    }}>
+    <>      <SEO 
+        title="Contact Ryan Casey - Software Developer | Get In Touch"
+        description="Contact Ryan Casey for software development opportunities, collaborations, or project inquiries. Reach out via email or connect through professional networks."
+        keywords="Contact Ryan Casey, Software Developer Contact, Hire Ryan Casey, Development Opportunities, Project Collaboration, Software Development Services"
+        url="https://ryancasey.us/contact"
+        type="website"
+      />
+      <Box sx={{ 
+        backgroundColor: theme => theme.palette.background.default,
+        minHeight: '100vh'
+      }}>
       {/* Snackbar for notifications */}
       <Snackbar 
         open={snackbar.open} 
@@ -318,8 +325,8 @@ const ContactPage: React.FC = () => {
             </Paper>
           </Stack>
         </Stack>
-      </Container>
-    </Box>
+      </Container>    </Box>
+    </>
   );
 };
 

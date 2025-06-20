@@ -9,6 +9,7 @@ import {
   Fade,
   Stack,
 } from '@mui/material';
+import SEO from '../Components/SEO';
 
 const avatarImage = require('../static/images/avatar.png');
 
@@ -20,12 +21,18 @@ const AboutPage: React.FC = () => {
     useEffect(() => {
     setLoaded(true);
   }, []);
-
   return (
-    <Box sx={{ 
-      backgroundColor: theme => theme.palette.background.default,
-      minHeight: '100vh'
-    }}>
+    <>      <SEO 
+        title="About Ryan Casey - Software Developer | Background & Skills"
+        description="Learn about Ryan Casey's background, education, technical skills, and experience in software development, web technologies, and cybersecurity. Discover my journey as a developer."
+        keywords="Ryan Casey About, Software Developer Background, Technical Skills, Web Development Experience, React Developer Skills, TypeScript Experience, Programming Education"
+        url="https://ryancasey.us/about"
+        type="profile"
+      />
+      <Box sx={{ 
+        backgroundColor: theme => theme.palette.background.default,
+        minHeight: '100vh'
+      }}>
       {/* Header Section */}
       <Box 
         sx={{ 
@@ -253,10 +260,10 @@ const AboutPage: React.FC = () => {
                 </Box>
               </Paper>
             </Stack>
-          </Stack>
-        </Box>
+          </Stack>        </Box>
       </Container>
     </Box>
+    </>
   );
 };
 

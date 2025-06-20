@@ -2,5 +2,18 @@
 User-agent: *
 Allow: /
 
+# Allow search engines to crawl all pages
+Allow: /about
+Allow: /projects
+Allow: /contact
+
+# Block access to source maps and build files
+Disallow: /*.map$
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map
+
 # Sitemap location
-Sitemap: https://ryancasey.dev/sitemap.xml
+Sitemap: https://ryancasey.us/sitemap.xml
+
+# Additional metadata for search engines
+# Crawl-delay: 1
