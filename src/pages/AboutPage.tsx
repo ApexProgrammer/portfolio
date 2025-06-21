@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
   return (
     <>      <SEO 
         title="About Ryan Casey - Software Developer | Background & Skills"
-        description="Learn about Ryan Casey's background, education, technical skills, and experience in software development, web technologies, and cybersecurity. Discover my journey as a developer."
+        description="Learn about Ryan Casey's background, education, technical skills, and experience in software development, web technologies, and cybersecurity."
         keywords="Ryan Casey About, Software Developer Background, Technical Skills, Web Development Experience, React Developer Skills, TypeScript Experience, Programming Education"
         url="https://ryancasey.us/about"
         type="profile"
